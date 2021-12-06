@@ -22,6 +22,7 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '~/plugins/primevue.js', mode: 'client' },
+        { src: '~/plugins/veevalidate.js', mode: 'client' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -34,6 +35,7 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/auth'
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
