@@ -42,5 +42,20 @@ export default {
     axios: {},
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {},
+
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: { url: "http://localhost:8080/user/login", method: 'post', propertyName: 'token' },
+                    user: { url: "http://localhost:8080/user/principal", method: 'get', propertyName: false }
+                },
+                logout: false,
+                tokenRequired: true,
+                tokenType: 'bearer',
+                autoFetchUser: true
+            }
+        }
+    }
 }
