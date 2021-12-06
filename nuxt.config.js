@@ -53,7 +53,7 @@ export default {
                 },
                 logout: false,
                 tokenRequired: true,
-                tokenType: 'bearer',
+                tokenType: 'Bearer',
                 autoFetchUser: true
             }
         }

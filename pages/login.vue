@@ -24,7 +24,7 @@
                 <ValidationProvider name="Senha" rules="required" v-slot="{ errors }">
                   <span class="p-input-icon-left">
                     <i class="pi pi-lock" />
-                    <InputText v-model="login.senha" type="password" placeholder="Senha" />
+                    <InputText v-model="login.password" type="password" placeholder="Senha" />
                   </span>
                   <span v-show="errors.length > 0" class="p-invalid">{{ errors[0]}}</span>
                 </ValidationProvider>
@@ -48,7 +48,7 @@
             return{
                 login: {
                     login: null,
-                    senha: null
+                    password: null
                 }
             }
         },
@@ -64,7 +64,7 @@
                     }
 
                 }catch(err){
-                    this.$toast.add({severity:'error', detail: 'Algum erro inesperado aconteceu. Por favor, nos contate através de nosso e-mail, ou redes sociais.', life:3000})
+                    this.$toast.add({severity:'error', detail: 'Dados incorretos. Tente novamente.', life:3000})
                 }
             }
         },
