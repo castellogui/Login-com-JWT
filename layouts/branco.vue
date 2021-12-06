@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <Toast />
-        <Nuxt />
-    </div>
+  <div>
+    <Toast />
+    <Nuxt />
+  </div>
 </template>
