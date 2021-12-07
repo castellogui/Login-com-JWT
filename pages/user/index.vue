@@ -20,6 +20,9 @@
         </template>
       </Column>
     </DataTable>
+    <nuxt-link class="p-button p-button-text" to="/user/new"
+      >Novo Usuário</nuxt-link
+    >
   </div>
 </template>
 
