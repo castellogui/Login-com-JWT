@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>Cadastro de Uusário</h1>
+    <h1>Cadastro de Usuário</h1>
+
+    <nuxt-link class="p-button p-button-text" to="/user"
+    >Listagem de Usuário</nuxt-link>
 
     <ValidationObserver ref="form">
       <form @submit.prevent="save()">
@@ -71,11 +74,11 @@
               v-slot="{ errors }"
             >
               <label for="date_birth">Data de Nascimento</label>
-              <InputText
-                id="date_birth"
-                v-model="user.date_birth"
-                type="text"
-              />
+              <div class="p-fluid p-grid p-formgrid">
+                <div class="p-field p-col-12 p-md-4">
+                  <Calendar id="basic" v-model="user.date_birth" dateFormat="dd.mm.yy"  autocomplete="off"/>
+                </div>
+              </div>
               <span v-show="errors.length > 0">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
@@ -160,13 +163,16 @@
         ></Button>
       </form>
     </ValidationObserver>
+    {{user}}
   </div>
+
 </template>
 
 
 
 <script>
 import UserService from "~/service/UserService";
+
 
 export default {
   middleware: "auth",
@@ -176,23 +182,23 @@ export default {
       id: params.id,
       user: {
         id: null,
-        login: "",
-        password: "",
-        name: "",
-        last_name: "",
-        email: "",
-        date_birth: "",
-        gender: "",
-        zip_code: "",
-        adress: "",
-        city: "",
-        state: "",
-        country: "",
-        type: "",
+        login: '',
+        password: '',
+        name: '',
+        last_name: '',
+        email: '',
+        date_birth: '',
+        gender: '',
+        zip_code: '',
+        adress: '',
+        city: '',
+        state: '',
+        country: '',
+        type: '',
       },
     };
   },
-  UserService: null,
+  userService: null,
   created() {
     this.userService = new UserService(this.$axios);
   },
@@ -205,6 +211,7 @@ export default {
     async getUser(id) {
       let response = await this.userService.byId(id);
       if (response.id) {
+        console.log(this.user)
         this.user = response;
       }
     },

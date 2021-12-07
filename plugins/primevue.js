@@ -38,6 +38,7 @@ import Panel from 'primevue/panel';
 import PanelMenu from 'primevue/panelmenu';
 import Password from 'primevue/password';
 import PickList from 'primevue/picklist';
+import PrimeVue from 'primevue/config';
 import ProgressBar from 'primevue/progressbar';
 import Rating from 'primevue/rating';
 import RadioButton from 'primevue/radiobutton';
@@ -61,7 +62,7 @@ import Tree from 'primevue/tree';
 import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 
-
+Vue.use(PrimeVue);
 Vue.use(ToastService);
 Vue.directive('tooltip', Tooltip);
 Vue.directive('ripple', Ripple);

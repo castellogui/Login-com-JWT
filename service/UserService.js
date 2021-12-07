@@ -16,7 +16,7 @@ export default class UserService {
         return this.http.$get('/user')
     }
 
-    byId() {
+    byId(id) {
         return this.http.$get('/user/' + id)
     }
 
