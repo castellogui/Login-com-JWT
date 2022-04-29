@@ -6,7 +6,7 @@
         <Card>
           <template slot="header">
             <div class="area-header">
-              <h1>Login</h1>
+              <h1 style="text-align: center">Login</h1>
             </div>
           </template>
           <template slot="content">
