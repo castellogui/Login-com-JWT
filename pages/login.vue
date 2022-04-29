@@ -18,7 +18,7 @@
                   v-slot="{ errors }"
                 >
                   <span class="p-input-icon-left">
-                    <i class="pi pi-user" />
+                    <i class="pi pi-user"/>
                     <InputText
                       v-model="login.login"
                       type="text"
@@ -26,39 +26,40 @@
                       placeholder="Login"
                     />
                   </span>
-                  <span v-show="errors.length > 0" class="p-invalid">{{
-                    errors[0]
-                  }}</span>
-                </ValidationProvider>
-              </div>
-              <div class="p-field">
-                <ValidationProvider
-                  name="Senha"
-                  rules="required"
-                  v-slot="{ errors }"
-                >
+                    <span v-show="errors.length > 0" class="p-invalid">{{
+                        errors[0]
+                      }}</span>
+                  </ValidationProvider>
+                </div>
+                <div class="p-field">
+                  <ValidationProvider
+                    name="Senha"
+                    rules="required"
+                    v-slot="{ errors }"
+                  >
                   <span class="p-input-icon-left">
-                    <i class="pi pi-lock" />
+                    <i class="pi pi-lock"/>
                     <InputText
                       v-model="login.password"
                       type="password"
                       placeholder="Senha"
                     />
                   </span>
-                  <span v-show="errors.length > 0" class="p-invalid">{{
-                    errors[0]
-                  }}</span>
-                </ValidationProvider>
+                    <span v-show="errors.length > 0" class="p-invalid">{{
+                        errors[0]
+                      }}</span>
+                  </ValidationProvider>
+                </div>
+                <div class="p-field div-btn">
+                  <Button type="submit" class="btn-login" label="Entrar"/>
+                </div>
               </div>
-              <div class="p-field div-btn">
-                <Button type="submit" class="btn-login" label="Entrar" />
-              </div>
-            </div>
-          </template>
-        </Card>
-      </form>
-    </ValidationObserver>
-  </div>
+            </template>
+          </Card>
+        </form>
+      </ValidationObserver>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -81,7 +82,7 @@ export default {
         });
 
         if (response.status == 200) {
-          window.location.href = "/";
+          window.location.href = "/user";
         } else {
           this.$toast.add({
             severity: "error",
