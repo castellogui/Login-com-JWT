@@ -15,8 +15,7 @@
                 <ValidationProvider
                   name="Usuário"
                   rules="required"
-                  v-slot="{ errors }"
-                >
+                  v-slot="{ errors }">
                   <span class="p-input-icon-left">
                     <i class="pi pi-user"/>
                     <InputText
@@ -59,7 +58,6 @@
         </form>
       </ValidationObserver>
     </div>
-  </header>
 </template>
 
 <script>
